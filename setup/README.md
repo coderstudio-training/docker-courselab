@@ -30,9 +30,18 @@ Docker Engine is the background service which runs containers. You can install i
  - [Install Docker Engine](https://docs.docker.com/engine/install/)
  - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-> If you're using WSL on Windows 10, it's much easier to use Docker Desktop which integrates with your WSL distro.
+> If you're using WSL2 on Windows 10/11, it's much easier to use Docker Desktop which integrates with your WSL distro.
 
+For more info: https://docs.docker.com/desktop/wsl/
 </details><br />
+
+## **OR** Docker Install Script (Recommended)
+
+Running this one-liner script on Mac, Linux, Windows (WSL 2):
+  ```
+  curl -fsSL https://get.docker.com | sh
+  ```
+
 
 ## Check your setup
 
@@ -42,10 +51,10 @@ When you have Git and Docker installed you should be able to run these commands 
 git --version
 ```
 
-I'm using Git for Windows and my output is:
+I'm using Git for Linux and my output is:
 
 ```
-git version 2.31.1.windows.1
+git version 2.34.1
 ```
 
 Then run:
@@ -54,44 +63,48 @@ Then run:
 docker version
 ```
 
-I'm using Docker Desktop on Windows and mine says:
+I'm using Docker on Linux and mine says:
 
 ```
-Client:
- Cloud integration: 1.0.14
- Version:           20.10.6
- API version:       1.41
- Go version:        go1.16.3
- Git commit:        370c289
- Built:             Fri Apr  9 22:49:36 2021
- OS/Arch:           windows/amd64
+Client: Docker Engine - Community
+ Version:           26.0.0
+ API version:       1.45
+ Go version:        go1.21.8
+ Git commit:        2ae903e
+ Built:             Wed Mar 20 15:17:48 2024
+ OS/Arch:           linux/amd64
  Context:           default
- Experimental:      true
 
 Server: Docker Engine - Community
  Engine:
-  Version:          20.10.6
-  API version:      1.41 (minimum version 1.12)
-  Go version:       go1.13.15
-  Git commit:       8728dd2
-  Built:            Fri Apr  9 22:44:56 2021
+  Version:          26.0.0
+  API version:      1.45 (minimum version 1.24)
+  Go version:       go1.21.8
+  Git commit:       8b79278
+  Built:            Wed Mar 20 15:17:48 2024
   OS/Arch:          linux/amd64
-...
+  Experimental:     false
+ containerd:
+  Version:          1.6.28
+  GitCommit:        ae07eda36dd25f8a1b98dfbf587313b99c0190bb
+ runc:
+  Version:          1.1.12
+  GitCommit:        v1.1.12-0-g51d5e94
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
 ```
 
 And then:
 
 ```
-docker-compose version
+docker compose version
 ```
 
 My output is:
 
 ```
-docker-compose version 1.29.1, build c34c88b2
-docker-py version: 5.0.0
-CPython version: 3.9.0
-OpenSSL version: OpenSSL 1.1.1g  21 Apr 2020
+Docker Compose version v2.25.0
 ```
 
 > Your details and version numbers may be different - that's fine. If you get errors then we need to look into it, because you'll need to have Docker running for all of the exercises.
